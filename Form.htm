@@ -1,0 +1,169 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="cpanel,vpanel,vista,panel,host,domain,free,免费,空间,免费空间">
+    <title>FreeVht</title>
+    <script type="text/javascript">
+        function ismaxlength(obj){
+                var mlength=obj.getAttribute? parseInt(obj.getAttribute("maxlength")) : ""
+                if (obj.getAttribute && obj.value.length>mlength)
+                        obj.value=obj.value.substring(0,mlength)
+        }
+    </script>
+    <style>
+        /* Powered by Xiobb.禁止盗用CSS */
+        /* i标签 */
+        i::marker {
+            unicode-bidi: isolate;
+            font-variant-numeric: tabular-nums;
+            text-transform: none;
+            text-indent: 0px !important;
+            text-align: start !important;
+            text-align-last: start !important;
+        }
+
+        /* a标签 */
+        a {
+            text-decoration: none;
+            cursor: default;
+            color: blue;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            color: white;
+            background: blue;
+        }
+
+        /* 主页 */
+        body {
+            background: #fffbf0;
+        }
+
+        /* Foorer&small */
+        footer>small {
+            color: gray;
+        }
+
+        /* 同行 */
+        #同行 {
+            display:inline;
+        }
+        #同行#左{
+            display:inline;
+            width:49.99%;
+        }
+        #同行#右{
+            display:inline;
+        }
+        /* 小标题 */
+        #小标题{
+            font-size:12px;
+            font-weight:normal;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//cfdomain.22web.org/jqf.js"></script>
+    <script>
+//JavaScript 验证码MD5
+ $.ajax({
+      url : "/captcha.php", 
+      dataType : "html", 
+      async : true , 
+      data : {}, 
+      type : "get", 
+      success:function (res){
+         console.log(res);
+         var code = res;
+         //alert(code);
+         captchaid.value=code;
+         captcha.src="http://order.{{ fxdomain }}/image.php?id="+code;
+         }
+      }
+   )
+    </script>
+</head>
+
+<body>
+    <br />
+    <blockquote>
+        <h1>
+            FreeVht
+            <!--
+            &nbsp;
+            <small id="小标题">
+                <sub>
+                    A Host For Everyone.
+                </sub>
+            </small>
+            -->
+        </h1>
+        <p>
+            永久免费的大空间VistaPanel虚拟主机
+        </p>
+            <br />
+            <p>
+                现在，注册一个属于你自己的永久免费虚拟主机，开始建站第一步吧!
+            </p>
+            <div class="addform">
+                <form action="http://order.{{ fxdomain }}/register2.php" method="post" id="form" target="_blank" name="updatedetails">
+                    <p>
+                        用户名:&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-control" type=text name=username size=30 value=""  maxlength="16" onkeyup="return ismaxlength(this)">
+                    </p>
+                    <p>
+                        密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-control" type=password name=password size=30 maxlength="8" onkeyup="return ismaxlength(this)">
+                    </p>
+                    <p>
+                        电子邮箱:&nbsp;
+                        <input class="form-control" type=text name=email size=30 value="">
+                    </p>
+                    <p>
+                        网站类型:&nbsp;
+                        <select  class="form-control" size="1" name="website_category">
+                            <option>个人网站</option>
+                            <option>企业网站</option>
+                            <option>个人爱好</option>
+                            <option>论坛门户</option>
+                            <option>成人网站</option>
+                            <option>交友网站</option>
+                            <option>软件下载</option>
+                        </select>
+                    </p>
+                    <p>
+                        站点语言:&nbsp;
+                        <select  class="form-control" size="1" name="website_language">
+                            <option>英语</option>
+                            <option>非英语</option>
+                        </select>
+                    </p>
+                    <!--传送验证码ID--><input type=hidden name=id value="" id="captchaid">
+                    <p>
+                        验证图像:&nbsp;
+                        <img width="125px" height="45px" src="" id="captcha">
+                    </p>
+                    <p>
+                        验证代码:&nbsp;
+                        <input class="form-control" type=text name=number size=30>
+                    </p>
+                </form>
+                <br />
+                <p>如果您想使用您自己的域名，请先将DNS修改到ns1.{{ fxdomain }} 和 ns2.{{ fxdomain }}，然后在控制面板添加。</p>
+                
+            </div><p>
+            <small><a href="javascript:void(0);" onclick="form.submit()">提交</a> | <a href="/Home.htm">返回</a></p>
+            <br />
+            <!--Footer-->
+            <footer>
+                <small>
+                    Powered by <a href="https://www.xiobb.vip/">Xiobb</a> 2021.
+                </small>
+            </footer>
+        </blockquote>
+    </body>
+</html>
