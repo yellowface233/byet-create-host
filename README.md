@@ -5,6 +5,9 @@
 替换{{ fxdomain }}为xiobb.vip即可!!
 然后，修改FreeVht为您的网站名即可
 
+# 重要的
+该分支theme是VanllaOcap所设计
+
 ## 配置信息
 需要使用默认配置，未测试SSL是否工作
 我们支持自动开通、获取验证码了
