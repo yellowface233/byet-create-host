@@ -3,6 +3,18 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="cpanel,vpanel,vista,panel,host,domain,free,免费,空间,免费空间">
     <title>FreeVht</title>
+		<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+  crossorigin="anonymous"
+/>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+  integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+  crossorigin="anonymous"
+></script>
     <script type="text/javascript">
         function ismaxlength(obj){
                 var mlength=obj.getAttribute? parseInt(obj.getAttribute("maxlength")) : ""
@@ -85,7 +97,7 @@
          }
       }
    )
-    </script>
+</script>
 </head>
 
 <body>
@@ -107,25 +119,25 @@
         </p>
             <br />
             <p>
-                现在，注册一个属于你自己的永久免费虚拟主机，开始建站第一步吧!
+                现在，注册一个属于你自己的永久免费虚拟主机，起航建站第一站吧!
             </p>
+			<p>如果您想使用您自己的域名，请先将DNS修改到ns1.{{ fxdomain }} 和 ns2.{{ fxdomain }}，然后在控制面板添加。</p>
             <div class="addform">
                 <form action="http://order.{{ fxdomain }}/register2.php" method="post" id="form" target="_blank" name="updatedetails">
-                    <p>
-                        用户名:&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-control" type=text name=username size=30 value=""  maxlength="16" onkeyup="return ismaxlength(this)">
-                    </p>
-                    <p>
-                        密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-control" type=password name=password size=30 maxlength="8" onkeyup="return ismaxlength(this)">
-                    </p>
-                    <p>
-                        电子邮箱:&nbsp;
-                        <input class="form-control" type=text name=email size=30 value="">
-                    </p>
+                    <div class="mdui-col-xs-12 mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">用户名</label>
+  <input class="mdui-textfield-input" type=text name=username maxlength="16" onkeyup="return ismaxlength(this)"/>
+</div>               <div class="mdui-col-xs-12 mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">密码</label><br>
+  <input class="mdui-textfield-input" type=password name=password size=30 maxlength="8" onkeyup="return ismaxlength(this)"/>
+</div>
+                    <div class="mdui-col-xs-12 mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">邮箱 - 尽量用@gmail.com</label>
+  <input class="mdui-textfield-input" type=text name=email size=30 value=""/>
+</div>
                     <p>
                         网站类型:&nbsp;
-                        <select  class="form-control" size="1" name="website_category">
+                        <select  class="form-control mdui-select" size="1" name="website_category">
                             <option>个人网站</option>
                             <option>企业网站</option>
                             <option>个人爱好</option>
@@ -137,7 +149,7 @@
                     </p>
                     <p>
                         站点语言:&nbsp;
-                        <select  class="form-control" size="1" name="website_language">
+                        <select  class="form-control mdui-select" size="1" name="website_language">
                             <option>英语</option>
                             <option>非英语</option>
                         </select>
@@ -147,22 +159,21 @@
                         验证图像:&nbsp;
                         <img width="125px" height="45px" src="" id="captcha">
                     </p>
-                    <p>
-                        验证代码:&nbsp;
-                        <input class="form-control" type=text name=number size=30>
-                    </p>
+					<div class="mdui-col-xs-12 mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">验证码</label>
+  <input class="mdui-textfield-input" type=text name=number size=30/>
+</div><br>
                 </form>
-                <br />
-                <p>如果您想使用您自己的域名，请先将DNS修改到ns1.{{ fxdomain }} 和 ns2.{{ fxdomain }}，然后在控制面板添加。</p>
+               
                 
             </div><p>
-            <small><a href="javascript:void(0);" onclick="form.submit()">提交</a> | <a href="/Home.htm">返回</a></p>
+            <small><a href="javascript:void(0);" class="mdui-btn mdui-color-theme-accnt mdui-ripple" onclick="form.submit()">提交</a> | <a  class="mdui-btn mdui-color-theme-accnt mdui-ripple" href="/Home.htm">返回</a></p>
             <br />
             <!--Footer-->
             <footer>
                 <small>
-                    Powered by <a href="https://www.xiobb.vip/">Xiobb</a> 2021.
-                </small>
+                    Powered by <a href="https://www.xiobb.vip/">Xiobb</a> 2021. Theme by <a href="https://vanlla.top">VanllaOcap
+           </a>     </small>
             </footer>
         </blockquote>
     </body>
